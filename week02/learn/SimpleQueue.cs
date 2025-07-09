@@ -37,7 +37,7 @@
     private readonly List<int> _queue = new();
 
     private void Enqueue(int value) {
-        _queue.Add(value); // ✅ CORREGIDO: agrega al final (FIFO)
+        _queue.Add(value); 
     }
 
     private int Dequeue() {
