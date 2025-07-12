@@ -6,24 +6,20 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 public class PriorityQueueTests
 {
     [TestMethod]
-    // Scenario: 
-    // Expected Result: 
-    // Defect(s) Found: 
-    public void TestPriorityQueue_1()
+    public void Dequeue_ReturnsHighestPriorityItem()
     {
-        var priorityQueue = new PriorityQueue();
-        Assert.Fail("Implement the test case and then remove this.");
+        var queue = new PriorityQueue();
+        queue.Enqueue("Low", 1);
+        queue.Enqueue("High", 3);
+        Assert.AreEqual("High", queue.Dequeue());
     }
 
     [TestMethod]
-    // Scenario: 
-    // Expected Result: 
-    // Defect(s) Found: 
-    public void TestPriorityQueue_2()
+    public void Dequeue_ReturnsFIFO_WhenSamePriority()
     {
-        var priorityQueue = new PriorityQueue();
-        Assert.Fail("Implement the test case and then remove this.");
+        var queue = new PriorityQueue();
+        queue.Enqueue("First", 1);
+        queue.Enqueue("Second", 1);
+        Assert.AreEqual("First", queue.Dequeue());
     }
-
-    // Add more test cases as needed below.
 }
