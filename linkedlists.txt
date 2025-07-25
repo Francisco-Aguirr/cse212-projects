@@ -1,0 +1,80 @@
+What is the difference between a linked list and a dynamic array?
+
+- A linked list stores data in nodes located randomly in memory and connects them using pointers, 
+while a dynamic array stores elements in contiguous memory, 
+enabling faster access via index-based calculation.
+
+What is one of the strengths of a linked list?
+
+- Linked lists allow fast insertion and removal at the beginning and end of the list without
+shifting elements or worrying about capacity.
+
+What is one of the drawbacks of a linked list?
+
+-Accessing specific elements is slower, because you must traverse the list node by node instead
+of jumping directly to an index like in arrays. ⏳
+
+
+
+
+
+
+
+Linked List
+(Operaciones paso a paso)
+
+Empty List:
+_head → null
+_tail → null
+
+InsertHead(🔴):       
+_head → [🔴] ← _tail     // [🔴]
+next → null
+prev → null
+
+InsertHead(🟠):
+_head → [🟠] ↔ [🔴] ← _tail  // <-x does not have prev[🟠]next-> <-prev[🔴]
+next → [🔴] next → null
+prev → null prev → [🟠]
+
+InsertTail(🟡):
+_head → [🟠] ↔ [🔴] ↔ [🟡] ← _tail 
+next → [🔴] next → [🟡] next → null
+prev → null prev → [🟠] prev → [🔴]
+
+RemoveHead():
+_head → [🔴] ↔ [🟡] ← _tail
+next → [🟡] next → null
+prev → null prev → [🔴]
+
+InsertAfter(🔴, 🟢):
+_head → [🔴] ↔ [🟢] ↔ [🟡] ← _tail
+next → [🟢] next → [🟡] next → null
+prev → null prev → [🔴] prev → [🟢]
+
+RemoveTail():
+_head → [🔴] ↔ [🟢] ← _tail
+next → [🟢] next → null
+prev → null prev → [🔴]
+
+InsertAfter(🔴, 🔵):
+_head → [🔴] ↔ [🔵] ↔ [🟢] ← _tail
+next → [🔵] next → [🟢] next → null
+prev → null prev → [🔴] prev → [🔵]
+
+Remove(🔵):
+_head → [🔴] ↔ [🟢] ← _tail
+next → [🟢] next → null
+prev → null prev → [🔴]
+
+Replace(🔴, 🟣):
+_head → [🟣] ↔ [🟢] ← _tail
+next → [🟢] next → null
+prev → null prev → [🟣]
+
+Reverse():
+Iteración hacia atrás: 🟢, 🟣
+
+Eliminar todo (Remove(🟣) + Remove(🟢)):
+_head → null
+_tail → null
